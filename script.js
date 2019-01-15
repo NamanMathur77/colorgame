@@ -9,6 +9,14 @@ var head=document.getElementsByTagName("h1")[0];
 var resetbtn=document.getElementById("reset");
 var easybtn=document.getElementById("easybtn");
 var hardbtn=document.getElementById("hardbtn");
+var heart=document.getElementsByClassName("fa")[0];
+
+heart.addEventListener("mouseover",function(){
+  this.classList.add("addshadow");
+});
+heart.addEventListener("mouseout",function(){
+  this.classList.remove("addshadow");
+});
 
 //mode selection
 easybtn.addEventListener("click",function(){
