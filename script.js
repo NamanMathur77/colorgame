@@ -12,6 +12,13 @@ var hardbtn = document.getElementById("hardbtn");
 var heart = document.getElementsByClassName("fa")[0];
 var howTo=document.getElementById("how");
 var inst=document.getElementById("instruction");
+var audiofiles=document.querySelectorAll("#audio");
+var winAudio=document.getElementById("winningSound");
+
+function playSound(){
+  i=Math.floor(Math.random()*12);
+  audiofiles[i].play();
+}
 howTo.addEventListener("click", function(){
   if(inst.style.display==="none"){
   inst.style.display="block";
@@ -21,6 +28,7 @@ else{
 }});
 
 heart.addEventListener("mouseover", function() {
+  audiofiles[4].play();
   this.classList.add("addshadow");
 });
 heart.addEventListener("mouseout", function() {
@@ -29,6 +37,7 @@ heart.addEventListener("mouseout", function() {
 
 //mode selection
 easybtn.addEventListener("click", function() {
+  audiofiles[0].play();
   //change the color on selecting
   easybtn.classList.add("selected");
   //remove the color from hard
@@ -98,6 +107,7 @@ for (var i = 0; i < squares.length; i++) {
   squares[i].addEventListener("click", function() {
     var clickedColor = this.style.backgroundColor;
     if (clickedColor == pickedColor) {
+      winAudio.play();
       messageDisplay.textContent = "correct";
       resetbtn.textContent = "Play Again?";
       head.style.backgroundColor = pickedColor;
@@ -105,6 +115,7 @@ for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = clickedColor;
       }
     } else {
+      playSound();
       this.style.backgroundColor = "#232323"
       messageDisplay.textContent = "Try Again";
     }
