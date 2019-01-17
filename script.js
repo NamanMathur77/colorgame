@@ -64,6 +64,7 @@ easybtn.addEventListener("click", function() {
 });
 //mode selection
 hardbtn.addEventListener("click", function() {
+  audiofiles[0].play();
   //remove the selection from easy button
   easybtn.classList.remove("selected");
   //add selection class to the hard button
