@@ -3,6 +3,9 @@ body {
   margin: 0;
   font-family: 'Righteous', cursive;
 }
+#header{
+  background: steelblue;
+}
 
 .square {
   width: 30%;

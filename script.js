@@ -10,6 +10,15 @@ var resetbtn = document.getElementById("reset");
 var easybtn = document.getElementById("easybtn");
 var hardbtn = document.getElementById("hardbtn");
 var heart = document.getElementsByClassName("fa")[0];
+var howTo=document.getElementById("how");
+var inst=document.getElementById("instruction");
+howTo.addEventListener("click", function(){
+  if(inst.style.display==="none"){
+  inst.style.display="block";
+}
+else{
+  inst.style.display="none";
+}});
 
 heart.addEventListener("mouseover", function() {
   this.classList.add("addshadow");
